@@ -1,4 +1,3 @@
-// const mongoose = require('mongoose');
 
 import mongoose  from 'mongoose';
 
@@ -18,8 +17,5 @@ const ReciepeName = mongoose.Schema({
     }
 
 });
-
-
-// module.exports = mongoose.model('reciepename',ReciepeName);
 
 export default mongoose.model('reciepeName',ReciepeName);

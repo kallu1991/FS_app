@@ -9,6 +9,8 @@ import { SigninComponent } from './Components/signin/signin.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { PagenotfoundComponent } from './Components/pagenotfound/pagenotfound.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -18,12 +20,15 @@ import { PagenotfoundComponent } from './Components/pagenotfound/pagenotfound.co
     SigninComponent,
     RegisterComponent,
     ContactComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

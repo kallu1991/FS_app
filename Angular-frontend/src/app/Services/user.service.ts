@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { signUpApi } from '../environment';
+import { reciepeApi, signUpApi } from '../environment';
 import { signInApi } from '../environment';
 import { CreateUser } from '../Models/userModel';
 import { SignInUser } from '../Models/userModel';
@@ -17,5 +17,9 @@ export class UserService {
 
   signInUser(data:SignInUser){
     return this.http.post(signInApi,data);
+  }
+
+  getReceiepes(){
+    return this.http.get(reciepeApi)
   }
 }

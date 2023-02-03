@@ -1,5 +1,4 @@
 import exp from "express";
-import path from "path";
 import cors from "cors";
 import ReciepeName from "./models/model.js";
 import userDetails from "./models/user_model.js";
@@ -32,14 +31,14 @@ app.post("/addreciepe", async (req, res) => {
 
 app.post("/create_user", async (req, res) => {
   console.log(req, "req");
-  const { userName, passWord, reEnterPassWord } = req.body;
+  const { email, passWord, mobile } = req.body;
   console.log(req.body, "BODY");
   try {
-    const newData = new userDetails({ userName, passWord, reEnterPassWord });
+    const newData = new userDetails({ email, passWord, mobile });
     console.log(newData);
     await newData.save();
     return res.status(200).json({
-      message: "User Created Successfully",
+      message: "User Created Successfully ✔",
     });
   } catch (err) {
     console.log(err);
@@ -49,18 +48,18 @@ app.post("/create_user", async (req, res) => {
 app.post("/signin", async (req, res) => {
   const newData = userDetails
     .find({
-      userName: req.body.userName,
+      userName: req.body.email,
       passWord: req.body.passWord,
     })
     .then((data) => {
       if (data.length > 0) {
         data.map((ele) => {
           if (
-            ele.userName === req.body.userName &&
+            ele.email === req.body.email &&
             ele.passWord === req.body.passWord
           ) {
             res.status(200).json({
-              message: "Login Successful",
+              message: "Login Successful 👍",
             });
           }
         });

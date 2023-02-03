@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const userDetails = mongoose.Schema({
-    userName:{
+    email:{
         type:String,
         required:true
     },
@@ -9,8 +9,8 @@ const userDetails = mongoose.Schema({
         type:String,
         required:true
     },
-    reEnterPassWord:{
-        type:String,
+    mobile:{
+        type:Number,
         required:true
     },
     data:{
